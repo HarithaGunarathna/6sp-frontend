@@ -18,13 +18,15 @@ body {
 }
 
 h1 {
-  font-size: 36px;
+  font-size: 72px;
   margin: 0;
+  color: #5C5470;
 }
 
 p {
-  font-size: 18px;
+  font-size: 32px;
   margin: 20px 0;
+  color: #352F44;
 }
 
 .action-buttons {
