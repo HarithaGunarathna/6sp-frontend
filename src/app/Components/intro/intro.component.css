@@ -48,3 +48,51 @@ p {
 .register-button:hover {
   background-color: #0056b3;
 }
+
+/* asdasd */
+
+.outer-box{
+  margin-left: 300px;
+  margin-right: 300px;
+  margin-top: 100px;
+  border-color: blanchedalmond;
+  border-style: solid;
+}
+
+.navbox{
+  width: 200px;
+  align-items: center;
+  margin-top: 200px;
+}
+
+.result{
+  margin-bottom: 200px;
+}
+
+h2{
+  color: white;
+}
+
+/* ..asd */
+
+.outer-box{
+  margin-left: 300px;
+  margin-right: 300px;
+  margin-top: 100px;
+  border-color: blanchedalmond;
+  border-style: solid;
+}
+
+.navbox{
+  width: 200px;
+  align-items: center;
+  margin-top: 200px;
+}
+
+.result{
+  margin-bottom: 200px;
+}
+
+h2{
+  color: white;
+}
