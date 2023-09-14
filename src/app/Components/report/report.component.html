@@ -41,14 +41,13 @@
   <app-report-item *ngFor="let task of tasks;let i = index"
   [task]="task"
   (onDeleteTask)="deleteTask(task)"
-  (onToggleReminder)="toggleReminder(task)"
   class="student-card">
       <div class="card-title">
           Student {{ i+1 }}
       </div>
       <div class="card-body">
-          <p>Name: {{ task.text }}</p>
-          <p>Marks: {{ 23 }}</p>
+          <p>Name: {{ task.name }}</p>
+          <p>Marks: {{ task.marks }}</p>
       </div>
   </app-report-item>
 </div>

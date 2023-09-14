@@ -13,10 +13,17 @@ export class AppComponent implements OnInit {
   title = '6sp-frontend';
   userIcon;
   router1;
+  showSpinner:boolean = false;
 
   constructor(public router: Router){
     this.userIcon = faUser
     this.router1 = router
+  }
+
+  subscribeToChildEmitter(componentRef:any){
+    componentRef.loadSpinnerEvent.subscribe((res:boolean)=>{
+        this.showSpinner = res
+    })
   }
 
   ngOnInit(): void {

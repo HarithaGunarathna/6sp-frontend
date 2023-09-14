@@ -2,27 +2,27 @@
   "tasks": [
     {
       "id": 1,
-      "text": "Doctors Appointment",
-      "day": "May 5th at 2:30pm",
-      "reminder": true
+      "name": "Haritha",
+      "email": "harithagunarathna.7@gmail.com",
+      "marks": 78
     },
     {
       "id": 2,
-      "text": "Meeting at School",
-      "day": "May 6th at 2:30pm",
-      "reminder": true
+      "name": "Shehan",
+      "email": "shehanmadushanka@gmail.com",
+      "marks": 85
     },
     {
       "id": 3,
-      "text": "Food Shopping",
-      "day": "May 7th at 12:30pm",
-      "reminder": false
+      "name": "Madushan",
+      "email": "madushanMora@gmail.com",
+      "marks": 83
     },
     {
       "id": 4,
-      "text": "Food Shopping",
-      "day": "May 7th at 12:30pm",
-      "reminder": false
+      "name": "Kamal",
+      "email": "kamakNishantha@gmail.com",
+      "marks": 74
     }
   ]
 }

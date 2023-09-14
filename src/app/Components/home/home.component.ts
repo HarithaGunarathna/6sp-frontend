@@ -1,4 +1,12 @@
-import { Component,ViewChild,ElementRef} from '@angular/core';
+import { Component,ViewChild,ElementRef, Output,EventEmitter} from '@angular/core';
+import { Task } from 'src/app/Task';
+import { TaskService } from 'src/app/Services/task.service';  
+
+const newTask: Task = {
+  name: "",
+  email: "",
+  marks: 0
+}
 
 @Component({
   selector: 'app-home',
@@ -8,11 +16,12 @@ import { Component,ViewChild,ElementRef} from '@angular/core';
 export class HomeComponent {
   name: string = '';
   email: string = '';
+  marks: Number = 0;
   selectedFile: File | null = null;
-
   @ViewChild('fileInput') fileInput!: ElementRef;
+  @Output() loadSpinnerEvent: EventEmitter<Boolean> = new EventEmitter();
 
-  constructor() {}
+  constructor(private taskService:TaskService) {}
 
   onFileChange(event: any) {
     const files: FileList = event.target.files;
@@ -22,6 +31,11 @@ export class HomeComponent {
       this.selectedFile = null;
     }
   }
+
+  randomIntFromInterval(min:number, max:number):number { // min and max included 
+    return Math.floor(Math.random() * (max - min + 1) + min)
+  }
+  
 
   uploadFile() {
     if (!this.selectedFile) {
@@ -36,11 +50,32 @@ export class HomeComponent {
       this.fileInput.nativeElement.value = '';
     }
 
-    // Optionally, reset the form fields
-    this.name = '';
-    this.email = '';
-
     console.log('File uploaded:', this.selectedFile);
+  }
+
+  clearScreen(){
+    this.name = ''
+    this.email = ''
+  }
+
+  async onSubmit(){
+    const rndInt = this.randomIntFromInterval(60, 100)
+    newTask.name = this.name;
+    newTask.email = this.email;
+    newTask.marks = rndInt;
+    console.log(rndInt);
+
+    this.marks = rndInt;
+    // this.loadSpinnerEvent.emit(true);
+    // await new Promise(f => setTimeout(f, 3500));
+    
+    // this.loadSpinnerEvent.emit(false);
+
+    this.taskService.addTask(newTask).subscribe((task) => newTask);
+    
+    this.clearScreen()
+    
+
   }
 
 }
